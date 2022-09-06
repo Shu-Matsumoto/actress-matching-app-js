@@ -1,3 +1,4 @@
+import { ExposureTwoTone } from '@mui/icons-material';
 import * as DBModels from '@prisma/client'
 
 // APIコンテキスト
@@ -163,6 +164,15 @@ export const BreastSizeType = {
   M: 12,
   N: 13,
 }
+/**
+ * プレイ条件選択肢
+ */
+export const PlayConditionChoice = {
+  NG: 0,
+  OK: 1,
+  NEGOTIABLE: 2,
+}
+
 /** 
  * ユーザデータ
 */
@@ -281,35 +291,35 @@ export class ActorProfileData {
  */
 export class PlayCondition1Data {
   constructor() {
-    // 本番(boolean型)
-    this.Honban = false;
-    // ゴムなし(boolean型)
-    this.Gomunashi = false;
-    // 中だし(boolean型)
-    this.Nakadashi = false;
-    // フェラチオ(boolean型)
-    this.Ferachio = false;
-    // イラマチオ(boolean型)
-    this.Iramachio = false;
+    // 本番(PlayConditionChoice型)
+    this.Honban = PlayConditionChoice.NG;
+    // ゴムなし(PlayConditionChoice型)
+    this.Gomunashi = PlayConditionChoice.NG;
+    // 中だし(PlayConditionChoice型)
+    this.Nakadashi = PlayConditionChoice.NG;
+    // フェラチオ(PlayConditionChoice型)
+    this.Ferachio = PlayConditionChoice.NG;
+    // イラマチオ(PlayConditionChoice型)
+    this.Iramachio = PlayConditionChoice.NG;
   }
   // ダミーデータ作成
   static CreateDummyData(){
     let instance = new PlayCondition1Data();
-    instance.Honban = false;
-    instance.Gomunashi = false;
-    instance.Nakadashi = false;
-    instance.Ferachio = false;
-    instance.Iramachio = false;
+    instance.Honban = PlayConditionChoice.NG;
+    instance.Gomunashi = PlayConditionChoice.NG;
+    instance.Nakadashi = PlayConditionChoice.NG;
+    instance.Ferachio = PlayConditionChoice.NG;
+    instance.Iramachio = PlayConditionChoice.NG;
     return instance;
   }
   // DB取得データをセット
   SetData(data){
     if (data == null) { return }
-    this.Honban = data.honban ? true : false;
-    this.Gomunashi = data.gomunashi ? true : false;
-    this.Nakadashi = data.nakadashi ? true : false;
-    this.Ferachio = data.ferachio ? true : false;
-    this.Iramachio = data.iramachio ? true : false;
+    this.Honban = data.honban;
+    this.Gomunashi = data.gomunashi;
+    this.Nakadashi = data.nakadashi;
+    this.Ferachio = data.ferachio;
+    this.Iramachio = data.iramachio;
   }
 }
 

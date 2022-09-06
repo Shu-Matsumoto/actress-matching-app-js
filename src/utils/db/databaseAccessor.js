@@ -300,11 +300,11 @@ export class DBAccessor{
 		const createdCondition = await DBAccessor.prisma.playCondition1.create({
 			data: {
 				userId: userId,
-				honban: condition.Honban ? 1 : 0,
-				gomunashi: condition.Gomunashi ? 1 : 0,
-				nakadashi: condition.Nakadashi ? 1 : 0,
-				ferachio: condition.Ferachio ? 1 : 0,
-				iramachio: condition.Iramachio ? 1 : 0,
+				honban: condition.Honban,
+				gomunashi: condition.Gomunashi,
+				nakadashi: condition.Nakadashi,
+				ferachio: condition.Ferachio,
+				iramachio: condition.Iramachio,
 			},
 		})
 		return createdCondition;
@@ -317,11 +317,11 @@ export class DBAccessor{
 				userId: Number(userId),
 			},
 			data: {
-				honban: condition.Honban ? 1 : 0,
-				gomunashi: condition.Gomunashi ? 1 : 0,
-				nakadashi: condition.Nakadashi ? 1 : 0,
-				ferachio: condition.Ferachio ? 1 : 0,
-				iramachio: condition.Iramachio ? 1 : 0,
+				honban: condition.Honban,
+				gomunashi: condition.Gomunashi,
+				nakadashi: condition.Nakadashi,
+				ferachio: condition.Ferachio,
+				iramachio: condition.Iramachio,
 			},
 		})
 		//console.log(updateCondition);

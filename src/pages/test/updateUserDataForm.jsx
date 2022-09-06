@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form'
 import * as UserTypes from '../../types/userTypes';
 import * as Api from '../../utils/api'
+import Link from 'next/link'
 
 export default function App() {
 	const { register, handleSubmit, formState: { errors }, } = useForm/*<{id: number}>*/();
@@ -67,7 +68,9 @@ export default function App() {
 
 	return (
 		<>
-			<a href="/">戻る</a>
+			<Link href="/">
+        <a>戻る</a>
+      </Link>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<input {...register('id', { required: true })} placeholder="ID" />
 				{errors.id && <div>IDを入力してください</div>}

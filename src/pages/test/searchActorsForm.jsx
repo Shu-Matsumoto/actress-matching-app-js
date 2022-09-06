@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form'
 import * as UserTypes from '../../types/userTypes';
 import * as Api from '../../utils/api'
+import Link from 'next/link'
 
 export default function App() {
 	
@@ -41,7 +42,9 @@ export default function App() {
 
 	return (
 		<>
-			<a href="/">戻る</a>
+			<Link href="/">
+        <a>戻る</a>
+      </Link>
 			<br />
 			<button onClick={handleClickEvent}>一覧取得</button>
 		</>

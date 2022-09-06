@@ -1,6 +1,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import * as UserTypes from '../../types/userTypes';
 import * as Api from '../../utils/api'
+import Link from 'next/link'
 
 export default function RegistrarionForm(){
 	const { register, handleSubmit, formState: { errors }, } = useForm();
@@ -17,7 +18,9 @@ export default function RegistrarionForm(){
 	}
 	return (
 		<>
-			<a href="/">戻る</a>
+			<Link href="/">
+        <a>戻る</a>
+      </Link>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<input {...register('Name', { required: true })} placeholder="名前" />
 				{errors.Name && <div>名前を入力してください</div>}
