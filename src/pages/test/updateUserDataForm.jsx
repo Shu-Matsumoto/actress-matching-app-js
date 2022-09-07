@@ -56,11 +56,11 @@ export default function App() {
 		data.Profile.WaistSize = 50;
 		data.Profile.HipSize = 85;
 		// PlayCondition
-		data.PlayCondition1.Honban = true;
-		data.PlayCondition1.Gomunashi = true;
-		data.PlayCondition1.Nakadashi = true;
-		data.PlayCondition1.Ferachio = true;
-		data.PlayCondition1.Iramachio = true;
+		data.PlayCondition1.Honban = UserTypes.PlayConditionChoice.OK;
+		data.PlayCondition1.Gomunashi = UserTypes.PlayConditionChoice.OK;
+		data.PlayCondition1.Nakadashi = UserTypes.PlayConditionChoice.NG;
+		data.PlayCondition1.Ferachio = UserTypes.PlayConditionChoice.OK;
+		data.PlayCondition1.Iramachio = UserTypes.PlayConditionChoice.NEGOTIABLE;
 
 		//console.log(data);
 		return data;
