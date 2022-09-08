@@ -74,6 +74,9 @@ export const RegistrationUser = async (
   console.log("API Start:[/users/registration]");
   const apiResult = await ApiRequestFetcher(address, ApiRequestType.POST, params);
   console.log("API End:[/users/registration]");
+  console.log("address start");
+  console.log(address);
+  console.log("address end");
   return {
     result: ErrorCodeTranslator.ToAppResult(apiResult.result),
     userData: apiResult.userData,
