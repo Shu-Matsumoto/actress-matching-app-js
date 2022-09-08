@@ -8,7 +8,7 @@ export default function RegistrarionForm(){
 	const onSubmit = (data) => {
 		//console.log(data)
     const apiContext = {
-      apiRootUrl: process.env.SELF_API_URL || 'http://localhost:3000/api',
+      apiRootUrl: process.env.SELF_API_URL,
     }
 		Api.RegistrationUser(apiContext, data)
 			.then(result => {
