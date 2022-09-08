@@ -8,7 +8,7 @@ export default function App() {
 	const onSubmit/*SubmitHandler<UserTypes.LoginParams>*/ = (data) => {
 		//console.log(data);
     const apiContext/*ApiContext*/ = {
-      apiRootUrl: process.env.SELF_API_URL,
+      apiRootUrl: process.env.NEXT_PUBLIC_SELF_API_URL,
     }
 		Api.Login(apiContext, data)
 			.then(result => {
